@@ -30,7 +30,7 @@ Python Basics Summary
 
 - Formatting: f-strings for dynamic string formatting
 
-## List Python_file
+## List Python_file.ipynb
 ##### Key Insights
 -> The notebook begins by explaining that lists are mutable, meaning their contents can be changed.
 
@@ -41,3 +41,29 @@ Python Basics Summary
 -> There might be some examples demonstrating list methods (e.g., append(), extend(), insert(), remove(), pop(), etc.).
 
 -> Some cells may include incorrect operations to illustrate errors or limitations.
+
+#  Tuple.ipynb
+* The notebook covers Python Tuples, including their properties, built-in functions, and advantages. Key topics include:
+
+## 1.Introduction to Tuples
+
+-> Tuples are represented with () and can store any data type.
+
+-> They are immutable, meaning their memory allocation cannot be increased or decreased.
+## 2.Memory Behavior
+
+-> Code snippets demonstrate that trying to modify tuple elements results in an error.
+
+-> Deleting a tuple completely removes it from memory.
+
+## 3.Built-in Functions
+
+-> count(): Counts occurrences of a value in a tuple.
+
+-> index(): Finds the index of a given value.
+
+## 4.Advantages of Tuples
+
+-> Tuples allow multiple values to be stored in a single variable.
+
+-> Packing and unpacking of tuple values is useful for variable assignment.
