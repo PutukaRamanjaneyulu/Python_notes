@@ -62,8 +62,52 @@ Python Basics Summary
 
 -> index(): Finds the index of a given value.
 
+
+
 ## 4.Advantages of Tuples
 
 -> Tuples allow multiple values to be stored in a single variable.
 
 -> Packing and unpacking of tuple values is useful for variable assignment.
+
+
+
+# Python_set.ipynb
+## Overview
+The notebook covers the fundamentals of Python sets, including their properties, built-in functions, and operations.
+
+#### Key Topics
+* Introduction to Sets
+
+  -> Represented with {} (flower brackets).
+  -> Unordered memory allocation.
+  -> No indexing, slicing, or skipping concepts.
+  -> No duplicate values allowed.
+  -> Mutable, but elements inside must be immutable.
+## Built-in Functions
+
+### Increasing Functions:
+
+* add(): Adds a single element to a set.
+* update(): Adds multiple elements to a set.
+### Decreasing Functions:
+
+* pop(): Removes a random element from the set.
+* discard(): Removes a specified element without error if the element is absent.
+* remove(): Removes a specified element but raises an error if the element is absent.
+### Other Specific Functions:
+
+* clear(): Empties the set.
+* copy(): Demonstrates deep copy and shallow copy.
+* union(): Combines two sets, removing duplicates.
+* intersection(): Finds common elements between sets.
+### Code Snippets
+-> Examples of defining sets.
+
+-> Demonstrations of set operations (add, update, pop, remove, etc.).
+
+-> Explanation of deep copy vs. shallow copy.
+
+-> Set operations like union and intersection.
+
+
