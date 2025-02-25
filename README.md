@@ -29,7 +29,7 @@ Python Basics Summary
 - Modification: replace(), strip(), split(), join()
 
 - Formatting: f-strings for dynamic string formatting
-
+---
 ## List Python_file.ipynb
 ##### Key Insights
 -> The notebook begins by explaining that lists are mutable, meaning their contents can be changed.
@@ -41,7 +41,7 @@ Python Basics Summary
 -> There might be some examples demonstrating list methods (e.g., append(), extend(), insert(), remove(), pop(), etc.).
 
 -> Some cells may include incorrect operations to illustrate errors or limitations.
-
+---
 #  Tuple.ipynb
 * The notebook covers Python Tuples, including their properties, built-in functions, and advantages. Key topics include:
 
@@ -70,7 +70,7 @@ Python Basics Summary
 
 -> Packing and unpacking of tuple values is useful for variable assignment.
 
-
+---
 
 # Python_set.ipynb
 ## Overview
@@ -109,5 +109,47 @@ The notebook covers the fundamentals of Python sets, including their properties,
 -> Explanation of deep copy vs. shallow copy.
 
 -> Set operations like union and intersection.
+
+---
+
+
+
+# **Dictionary.ipynb**
+This Jupyter Notebook provides a comprehensive guide on Python dictionaries, covering their structure, key characteristics, and built-in functions.
+
+#### **Key Topics Covered:**
+1. **Introduction to Dictionaries**  
+   - Represented using `{}`  
+   - Consists of key-value pairs  
+   - No indexing, slicing, or skipping  
+   - Can store various data types as values  
+   - Requires immutable data types as keys  
+
+2. **Dictionary Properties**  
+   - If duplicate keys exist, the last assigned value overrides the previous one  
+   - Dictionaries are **mutable**, meaning memory can be increased or decreased dynamically  
+
+3. **Built-in Dictionary Functions**  
+   - `get()` – Access values safely  
+   - `update()` – Modify existing key-value pairs  
+   - `pop()` – Remove a key-value pair  
+   - `popitem()` – Remove the last inserted key-value pair  
+   - `keys()`, `values()`, `items()` – Retrieve dictionary keys, values, and key-value pairs  
+   - `clear()` – Empty the dictionary  
+   - `copy()` – Create deep and shallow copies  
+
+#### **Code Examples Included:**
+- Creating dictionaries with single and multiple values  
+- Accessing dictionary values using keys and indexes  
+- Demonstrating dictionary mutability (adding/removing elements)  
+- Practical implementation of built-in functions  
+
+---
+
+
+
+
+
+
 
 
