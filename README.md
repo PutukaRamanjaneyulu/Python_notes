@@ -361,6 +361,31 @@ else:
 
 
 
+## `lambda_Functions.ipynb`
+
+The Jupyter Notebook primarily covers **Lambda Functions** and their applications in Python. Key topics include:
+
+1. **Introduction to Lambda Functions**  
+   - Explanation of anonymous functions (functions without a name).
+   - Syntax: `lambda arguments: expression`.
+   - Examples demonstrating lambda usage for simple operations.
+
+2. **Comparison with Regular Functions**  
+   - Example of defining and using a regular function.
+   - Equivalent lambda function performing the same task.
+
+3. **Multiplication Table Using Different Methods**  
+   - **Method 1:** Using a simple `for` loop.  
+   - **Method 2:** Using a function.  
+   - **Method 3:** Using a lambda function inside a loop.
+
+4. **Map Function**  
+   - Explanation of `map(function, iterable)`.  
+   - Example usage of `map()` with lambda functions.
+
+The notebook includes both **code cells** with practical implementations and **markdown explanations** for better understanding.
+
+
 
 
 
