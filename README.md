@@ -385,6 +385,29 @@ The Jupyter Notebook primarily covers **Lambda Functions** and their application
 
 The notebook includes both **code cells** with practical implementations and **markdown explanations** for better understanding.
 
+# Summary of the File:
+The Jupyter Notebook **"Comprehension.ipynb"** covers **list comprehensions** and **dictionary comprehensions** in Python. It explains how comprehensions help reduce lines of code and provides examples with and without comprehension. The notebook is divided into the following sections:
+
+1. **Introduction to Comprehensions**  
+   - Explains the concept of comprehensions and their types (List & Dictionary comprehensions).
+   - Describes different syntax patterns for comprehensions.
+
+2. **List Comprehension**  
+   - Provides three syntax structures for list comprehensions:
+     - Basic comprehension
+     - Comprehension with conditionals
+     - Comprehension with if-else conditions
+   - Examples comparing regular loops vs. list comprehensions.
+
+3. **Dictionary Comprehension**  
+   - Explains how dictionary comprehensions work.
+   - Provides similar examples as list comprehensions but using dictionary structures.
+
+4. **Performance Comparison**  
+   - Compares execution speed between using comprehensions and traditional loops.
+
+The notebook includes multiple **code snippets** and **explanations** demonstrating how comprehensions simplify iteration and filtering in Python.
+
 
 
 
