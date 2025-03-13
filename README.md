@@ -562,7 +562,140 @@ Your markdown cells provide useful theoretical explanations of file handling mod
 ## **Final Thoughts**
 Your notebook does a good job of introducing file handling and JSON operations. By implementing the improvements above, it will be **more efficient, readable, and professional**.
 
+---
 
+# Exception Handling in Python
+
+## What is Exception Handling?
+Exception handling is a mechanism to detect and handle runtime errors to maintain smooth program execution. It helps to prevent abrupt program termination.
+
+## Common Errors in Python
+1. **SyntaxError** - Incorrect syntax in the code.
+2. **ZeroDivisionError** - Division by zero is not allowed.
+3. **NameError** - Using an undefined variable.
+4. **ValueError** - Incorrect value passed to a function.
+5. **IndentationError** - Improper indentation in the code.
+6. **FileNotFoundError** - Trying to open a file that does not exist.
+
+---
+
+# 1. SyntaxError Example
+```python
+# Incorrect variable name (SyntaxError)
+# 10a = "kamal"  # This will raise a SyntaxError
+
+# Correct syntax
+var_name = "kamal"
+print(var_name)
+```
+
+---
+
+# 2. ZeroDivisionError Example
+```python
+# Correct division
+print(10 / 5)  # Output: 2.0
+
+# Error: Division by zero
+# print(5 / 0)  # Uncommenting this will raise ZeroDivisionError
+```
+
+---
+
+# 3. NameError Example
+```python
+# Correct usage
+city = "Hyderabad"
+print(city)
+
+# Error: Undefined variable
+# print(CITY)  # Uncommenting this will raise NameError
+```
+
+---
+
+# 4. ValueError Example
+```python
+# Correct conversion
+num = "123"
+print(int(num))  # Output: 123
+
+# Error: Cannot convert non-numeric string
+# print(int("kamal123"))  # Uncommenting this will raise ValueError
+```
+
+---
+
+# 5. IndentationError Example
+```python
+# Correct indentation
+for i in range(11, 15):
+    print(i)
+
+# Error: Incorrect indentation
+# for i in range(11, 15):
+# print(i)  # Uncommenting this will raise IndentationError
+```
+
+---
+
+# 6. FileNotFoundError Example
+```python
+# Error: File not found
+# with open("nonexistent_file.txt", "r") as file:
+#     print(file.read())  # Uncommenting this will raise FileNotFoundError
+```
+
+---
+
+# Handling Errors Using try-except
+
+```python
+try:
+    a = 10
+    b = 0
+    print(a / b)  # Division by zero
+except ZeroDivisionError as e:
+    print("Error:", e)  # Output: Error: division by zero
+```
+
+---
+
+# Using try-except-finally
+
+```python
+try:
+    for i in range(11, 21):
+        if i % 2 == 0:
+            print(f'Even: {i}')
+except Exception as e:
+    print("Error:", e)
+finally:
+    print("This will always execute, regardless of error occurrence.")
+```
+
+---
+
+# Accessing Error Type and Line Number
+
+```python
+import sys
+
+try:
+    for i in range(11, 21):
+        if i % 2 == 0:
+            print(f'Even: {i / 0}')  # Intentional error
+except Exception as e:
+    error_type, error_msg, error_lineno = sys.exc_info()
+    print(f'Error Type: {error_type}')
+    print(f'Error Message: {error_msg}')
+    print(f'Error Line Number: {error_lineno.tb_lineno}')
+```
+
+---
+
+# Conclusion
+Exception handling helps in writing robust and error-free code. Using `try-except-finally`, we can optimize our code to handle errors efficiently.
 
 
 
