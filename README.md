@@ -696,123 +696,386 @@ except Exception as e:
 
 # Conclusion
 - Exception handling helps in writing robust and error-free code. Using `try-except-finally`, we can optimize our code to handle errors efficiently.
----
-
-#### Here's a more detailed breakdown of your **OOPS_Day1.ipynb** file:
 
 ---
 
-## **1. Introduction to OOPS**
-The notebook introduces **Object-Oriented Programming System (OOPS)** and covers key concepts such as:
-- **Class**
-- **Object**
-- **Self**
-- **Functions in Class**
-- **Inheritance**
-- **Polymorphism**
-- **Encapsulation**
+
+
+
+
+## 📚 **OOPS -> Object-Oriented Programming System**
+
+### Key Concepts:
+- **Class:** Collection of variables and functions.
+- **Object:** Instance of a class.
+- **Self:** Refers to the object itself.
+- **Functions in Class:** Define actions performed by objects.
+- **Inheritance:** Mechanism to derive a class from another.
+- **Polymorphism:** Ability to take multiple forms.
+- **Encapsulation:** Restricting access to methods and variables.
 
 ---
 
-## **2. Classes and Objects**
-A **class** is a blueprint for creating objects, and an **object** is an instance of a class.  
-### **Key points about classes:**
-- Class names should be written in **Capitalized words**.
-- A class contains **variables (attributes) and functions (methods)**.
-- **Example Code:**
-  ```python
-  class CSE:   # Class
-      s = 10   # Attribute
+## 🏗️ **1. Class Basics**
 
-  anil = CSE()  # Object creation
-  print(anil.s)  # Accessing attribute
-  ```
-  **Output:**  
-  ```
-  10
-  ```
+### 🔹 **Class Definition:**
+- Class names should use **capitalized words**.
+- Basic syntax:
+```python
+class ClassName:
+    variable_name = value
+    def function_name(self):
+        # function body
+```
 
 ---
 
-## **3. Accessing Class Attributes**
-Class attributes can be accessed in different ways:
-### **Using Object Instances**
+### ✅ **Example 1: Basic Class and Object**
+```python
+class CSE:  
+  s = 10      
+anil = CSE()   
+print(anil.s)
+```
+- `CSE` is the class.
+- `s` is a variable.
+- `anil` is an object.
+
+---
+
+### ✅ **Example 2: Multiplying Class Variables**
 ```python
 class ECE:
-    a = 10
-    b = 2
+  a = 10
+  b = 2
 
-kumar = ECE()  # Creating an object
-print(kumar.a * kumar.b)  # Accessing attributes
-```
-**Output:**  
-```
-20
+kumar = ECE()
+print(kumar.a * kumar.b)
 ```
 
-### **Using Class Name Directly (Without Creating an Object)**
-If no object is created, attributes can still be accessed using the class name.
+---
+
+### ✅ **Example 3: Accessing Class Variables Without Object**
 ```python
 class MECH:
-    j = 100
-    k = 200
+  j = 100
+  k = 200
 
-print(MECH.j + MECH.k)  # Accessing attributes directly
-```
-**Output:**  
-```
-300
+print(MECH.j + MECH.k)
 ```
 
 ---
 
-## **4. Creating Empty Classes and Adding Attributes Dynamically**
-### **Method 1: Using Objects to Add Attributes**
+## 🔄 **2. Methods to Add Data to a Class**
+
+### ✅ **Method 1: Using Object to Create Variables**
 ```python
 class CSE:
-    pass  # Empty class
-
-kumar = CSE()  # Creating an object
-kumar.priya = 10  # Adding attributes dynamically
-kumar.laila = 20
-
-print(kumar.priya * kumar.laila)
-```
-**Output:**  
-```
-200
+  pass
+kumar = CSE()
+kumar.priya = 10
+kumar.liala = 20
+print(kumar.priya * kumar.liala)
 ```
 
-### **Method 2: Using Class Name to Add Attributes**
+---
+
+### ✅ **Method 2: Using Class Name to Create Variables**
 ```python
 class SEC:
-    pass
-
+  pass
 SEC.priya = 10
 SEC.laila = 20
-
 print(SEC.priya + SEC.laila)
 ```
-**Output:**  
+
+---
+
+## 🎯 **3. Constructors in OOPS**
+
+### 🔹 **Constructor Basics**
+- **Constructor:** Special method that initializes an object.
+- Types:
+  - **Non-parameterized constructor:** No arguments.
+  - **Parameterized constructor:** Takes arguments.
+
+---
+
+### ✅ **Non-parameterized Constructor**
+```python
+class CSE:
+  def __init__(self):
+    print("Good Morning")
+
+kumar = CSE()
 ```
-30
+
+---
+
+### ✅ **Parameterized Constructor**
+```python
+class CSE:
+  def __init__(self, a, b):
+    self.a = a
+    self.b = b
+
+kimar = CSE(10, 20)
+print(kimar.a + kimar.b)
 ```
 
 ---
 
-## **5. Advanced Concepts (Reusability)**
-The notebook introduces how to **reuse** classes and objects efficiently, which is an important aspect of **object-oriented programming**.
+## ⚡ **4. Functions in Class**
+
+### ✅ **Example with Multiple Functions**
+```python
+from ast import Raise
+class NAME:
+  def addition(self):
+    p = 50
+    g = 80
+    print(p + g)
+  
+  def subtraction(self):
+    p = 50
+    g = 80
+    print(p - g)
+
+ram = NAME()
+ram.addition()
+ram.subtraction()
+```
 
 ---
 
-## **Summary**
-- **Classes** are blueprints for creating **objects**.
-- **Objects** are instances of classes with specific attributes.
-- **Attributes** can be accessed using **objects** or **class names**.
-- **Empty classes** can be created and used dynamically.
-- **Code reusability** is a key advantage of OOPS.
+### ✅ **Calling Multiple Methods**
+```python
+class COL:
+  def __init__(self, p, g):
+    self.p = p
+    self.g = g
+
+  def addition(self):
+    print(self.p + self.g)
+  
+  def Substraction(self):
+    print(self.p - self.g)
+
+  def comman(self):
+    self.addition()
+    self.Substraction()
+
+kumar = COL(50, 80)
+kumar.comman()
+```
 
 ---
+
+## 🔢 **5. Perfect Number Using OOPS**
+```python
+class PER:
+  def __init__(self, n):
+    self.n = n
+  
+  def Col(self):
+    self.c = 0
+    for i in range(1, self.n):
+      if self.n % i == 0:
+        self.c += i
+    if self.c == self.n:
+      print(f'Perfect Number: {self.n}')
+    else:
+      print(f'Not a Perfect Number: {self.n}')
+
+kumar = PER(8)
+kumar.Col()
+```
+
+---
+
+## 🧬 **6. Inheritance in OOPS**
+
+### 🔹 **Types of Inheritance:**
+1. **Single Inheritance**
+2. **Multi-level Inheritance**
+3. **Multiple Inheritance**
+4. **Hierarchical Inheritance**
+5. **Hybrid Inheritance**
+
+---
+
+### ✅ **Single Inheritance**
+```python
+class PARENT:
+  def building(self):
+    print("I have Building")
+class CHILD(PARENT):
+  def job(self):
+    print("I have a job")
+
+kumar = PARENT()
+anil = CHILD()
+kumar.building()
+anil.job()
+anil.building()
+```
+
+---
+
+### ✅ **Multi-level Inheritance**
+```python
+class FATHER:
+  def building(self):
+    print("I have a Building")
+
+class CHILD(FATHER):
+  def job(self):
+    print("I have a job")
+
+class Child2(FATHER):
+  def Business(self):
+    print("I have the Business")
+
+anil = CHILD()
+chandu = Child2()
+anil.job()
+anil.building()
+chandu.Business()
+chandu.building()
+```
+
+---
+
+### ✅ **Multiple Inheritance**
+```python
+class FATHER:
+  def building(self):
+    print("I have Building")
+
+class MOTHER:
+  def hari(self):
+    print("I have a house")
+
+class CHILD(FATHER, MOTHER):
+  def job(self):
+    print("I have a job")
+
+son = CHILD()
+son.job()
+son.hari()
+son.building()
+```
+
+---
+
+### ✅ **Hierarchical Inheritance**
+```python
+class FATHER:
+  def building(self):
+    print("I have a Building")
+
+class CHILD(FATHER):
+  def job(self):
+    print("I have a job")
+
+class Child2(FATHER):
+  def Business(self):
+    print("I have the Business")
+
+class Child3(FATHER):
+  def company(self):
+    print("I have the company")
+
+anil = CHILD()
+chandu = Child2()
+prasad = Child3()
+anil.job()
+anil.building()
+chandu.Business()
+chandu.building()
+prasad.company()
+prasad.building()
+```
+
+---
+
+### ✅ **Hybrid Inheritance**
+```python
+class Grandparent:
+  def building(self):
+    print("I have a Building")
+
+class FATHER(Grandparent):
+  def job(self):
+    print("I have a job")
+
+class MOTHER(Grandparent):
+  def Business(self):
+    print("I have the Business")
+
+class Child1(FATHER, MOTHER):
+  def company(self):
+    print("I have the company")
+
+son = Child1()
+son.company()
+son.job()
+son.Business()
+```
+
+---
+
+## 🧠 **7. Polymorphism**
+
+### 🔹 **Types of Polymorphism:**
+1. **Method Overloading**
+2. **Method Overriding**
+
+---
+
+### ✅ **Method Overriding**
+```python
+def func():
+  print("Good Morning")
+
+def func():
+  print("Good Afternoon")
+
+func()
+```
+- Last defined method overrides the previous one.
+
+---
+
+### ✅ **Method Overloading**
+```python
+def func(a=None, b=None):
+  if a == None and b == None:
+    print("I am From India")
+  elif a == None and b != None:
+    print("I am From USA")
+  elif a != None and b != None:
+    print("I am from UK")
+  else:
+    print("I am From Canada")
+
+func()
+func(a=10)
+func(b=20)
+func(10, 20)
+```
+
+---
+
+## 📝 **Summary of the File**
+- The file extensively covers:
+  - Basics of OOPS (Class, Object, Self)
+  - Constructor types and function implementation
+  - All types of inheritance with examples
+  - Polymorphism with overloading and overriding
+  - Example tasks like perfect number checking using OOPS
+
+
 
 
 
