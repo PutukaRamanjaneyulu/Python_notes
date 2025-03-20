@@ -1077,6 +1077,228 @@ func(10, 20)
 
 
 
+# **production_python**
+
+## 📁 **1. p_python.py**
+
+### 📝 **Description:**
+- This script simulates a **sequential execution model** where tasks run one after another.
+- **Purpose:**  
+    - Show the drawback of normal (sequential) execution without using concurrency or parallelism.
+
+---
+
+### ⚡ **Key Functions:**
+1. **india()**
+   - Prints "India" with numbers from 1 to 10.
+   - Sleeps for 0.5 seconds after each iteration.
+
+2. **uk()**
+   - Prints "UK" with numbers from 1 to 10.
+   - Sleeps for 0.5 seconds after each iteration.
+
+---
+
+### ⏱️ **Sequential Execution:**
+```python
+# Drawback of normal level of Code
+import time
+
+starting_time=time.time()
+def india():
+    for i in range(1,11):
+        time.sleep(0.5)
+        print(f'india : {i}')
+def uk():
+    for i in range(1,11):
+        time.sleep(0.5)
+        print(f'uk : {i}')
+india()
+uk()
+print(f'Total Time :{(time.time() - starting_time)}')
+```
+✅ **Key Point:**
+- Tasks are executed one after another, resulting in higher execution time.
+
+---
+
+## 📁 **2. production_python.py**
+
+### 📝 **Description:**
+- This script demonstrates **multi-processing** using Python’s `multiprocessing` module.
+- **Purpose:**  
+    - Run multiple processes in parallel to utilize CPU cores efficiently.
+
+---
+
+### ⚡ **Key Functions:**
+1. **india()**
+   - Prints "India" with numbers from 1 to 10.
+   - Sleeps for 0.5 seconds after each iteration.
+   - Displays the process ID (PID) using `os.getpid()`.
+
+2. **uk()**
+   - Prints "UK" with numbers from 1 to 10.
+   - Displays its process ID.
+
+---
+
+### 🔥 **Multi-processing Implementation:**
+```python
+import multiprocessing.process
+import time
+import multiprocessing
+import os
+
+starting_time=time.time()
+def india():
+    print(f'CPU1 processes id: {os.getpid()}')
+    for i in range(1,11):
+        time.sleep(0.5)
+        print(f'india : {i}')
+def uk():
+    print(f'CPU2 processes id: {os.getpid()}')
+    for i in range(1,11):
+        time.sleep(0.5)
+        print(f'uk : {i}')
+if __name__ == "__main__":
+    print(f'Main Processor id : {(os.getpid())}')
+    cpu1 = multiprocessing.Process(target=india, args=())
+    cpu2 = multiprocessing.Process(target=uk, args=())
+    cpu1.start()
+    cpu2.start()
+    cpu1.join()
+    cpu2.join()
+    print(f'Total Time :{(time.time() - starting_time)}')
+    print(f'main Function Exits')
+```
+✅ **Key Point:**
+- `cpu1` and `cpu2` run as separate processes to reduce execution time.
+- `join()` ensures that the main process waits for both to complete.
+
+---
+## 📁 **3. m_p_2.py**
+
+### 📝 **Description:**
+- This script demonstrates **multi-threading** and **multi-processing** concepts in Python.
+- It processes tasks concurrently using threads.
+- **Purpose:**  
+    - Simulate tasks running in parallel, representing different countries (India, UK, Parish, Canada).
+
+---
+
+### ⚡ **Key Functions:**
+1. **india()**
+   - Prints "India" along with numbers from 1 to 10.
+   - Sleeps for 0.5 seconds after each iteration.
+   - Displays CPU1 processor ID.
+
+2. **uk()**
+   - Prints "UK" along with numbers from 1 to 10.
+   - Same sleep time and CPU ID as `india()`.
+
+3. **parish()**
+   - Prints "Parish" along with numbers from 1 to 10.
+   - Displays CPU2 processor ID.
+
+4. **Canada()**
+   - Prints "Canada" along with numbers from 1 to 10.
+   - Displays CPU2 processor ID.
+
+---
+
+### 🔥 **Threading Implementation:**
+- **Comman_1():** Runs `india()` and `uk()` concurrently using threads.
+```python
+import time
+import os
+import multiprocessing
+starting_time = time.time()
+# Processing work the simultaneously 
+# Threading work the Concurrent(line by line)
+import threading
+
+
+def india():
+    print(f'Cpu1 Processor id: {(os.getpid())}')
+    for i in range(1,11):
+        time.sleep(0.5)
+        print(f'India : {i}')
+def uk():
+    print(f'Cpu1 Processor id: {(os.getpid())}')
+    for i in range(1,11):
+        time.sleep(0.5)
+        print(f'uk : {i}')
+def parish():
+    print(f'Cpu2 Processor id: {(os.getpid())}')
+    for i in range(1,11):
+        time.sleep(0.5)
+        print(f'paridh : {i}')
+def Canada():
+    print(f'Cpu2 Processor id: {(os.getpid())}')
+    for i in range(1,11):
+        time.sleep(0.5)
+        print(f'canada : {i}')
+def Comman_1():
+    t1 = threading.Thread(target=india, args=())
+    t2 = threading.Thread(target=uk, args=())
+    t1.start()
+    t2.start()
+```
+- **Comman_2():** Runs `parish()` and `Canada()` concurrently using threads.
+```python
+def Comman_2():
+    t3 = threading.Thread(target=parish, args=())
+    t4 = threading.Thread(target=Canada, args=())
+    t3.start()
+    t4.start()
+```
+
+---
+
+### 🚀 **Main Block:**
+```python
+if __name__ == "__main__":
+    print(f'Main Processor id: {(os.getpid())}')
+    cpu1 = threading.Thread(target=Comman_1, args=())
+    cpu2 = threading.Thread(target=Comman_2, args=())
+    cpu1.start()
+    cpu2.start()
+    print(f'Total Time : {(time.time() - starting_time)}')
+    print(f'Main Processor Exit')
+```
+✅ **Key Point:**
+- `Comman_1()` and `Comman_2()` run concurrently to reduce execution time.
+
+---
+
+## 🎯 **Detailed Comparison**
+
+| Feature                   | m_p_2.py         | p_python.py     | production_python.py |
+|---------------------------|------------------|-----------------|----------------------|
+| **Execution Model**         | Multi-threading  | Sequential      | Multi-processing     |
+| **Concurrency/Parallelism** | Concurrent       | No concurrency  | True parallelism     |
+| **Processor Usage**         | Shared           | Single          | Multiple CPUs        |
+| **Performance**             | Faster           | Slow            | Fastest              |
+| **Thread/Process Control**   | Threads          | None            | Processes            |
+| **Execution Time**           | Low              | High            | Low                  |
+
+---
+
+## 🔥 **Performance Insights:**
+1. **m_p_2.py:** Best suited for I/O-bound tasks due to threading.
+2. **p_python.py:** Slow and inefficient for parallel tasks due to sequential execution.
+3. **production_python.py:** Ideal for CPU-bound tasks with heavy computation due to multi-processing.
+
+---
+
+## 📚 **Summary and Recommendations:**
+- Use **multi-threading** when tasks involve I/O operations (networking, file I/O).
+- Use **multi-processing** for CPU-intensive tasks where tasks need to run in parallel.
+- Avoid sequential processing when tasks can be run concurrently to save time.
+
+
+
 
 
 
