@@ -1297,8 +1297,278 @@ if __name__ == "__main__":
 - Use **multi-processing** for CPU-intensive tasks where tasks need to run in parallel.
 - Avoid sequential processing when tasks can be run concurrently to save time.
 
+---
+
+Here’s a **detailed breakdown** of the **Numpy_2.ipynb** file:  
+
+---
+
+## **1. Introduction to Python Libraries**
+The notebook starts with an overview of **four important libraries** used in data science:
+
+| **Library**  | **Purpose** |
+|-------------|------------|
+| **NumPy**   | Working with multidimensional arrays and numerical computing. |
+| **Pandas**  | Data manipulation and analysis. |
+| **Matplotlib** | Data visualization using plots and graphs. |
+| **Seaborn** | Statistical data visualization (built on Matplotlib). |
+
+---
+
+## **2. NumPy Basics**
+- **NumPy** (**Numerical Python**) is a powerful library used for numerical operations on arrays.
+- Built-in functions used:
+  - `array()` → Creates an array.
+  - `arange()` → Generates a sequence of numbers.
+  - `ndim` → Checks the number of dimensions.
+  - `size` → Returns the number of elements.
+  - `shape` → Returns the dimensions of an array.
+  - `reshape()` → Changes the shape of an array.
+
+---
+
+## **3. Creating NumPy Arrays**
+### **1D Arrays (One-Dimensional)**
+Example code:
+```python
+import numpy as np  
+a = np.array([10, 20, 30, 40, 50])  
+print(a)  
+print(type(a))   # Checking the datatype  
+print(a.ndim)    # Number of dimensions  
+print(a.shape)   # Shape of the array  
+print(a.size)    # Number of elements  
+```
+### **Explanation:**
+- The array `[10, 20, 30, 40, 50]` is created.
+- `.ndim` **(1)** → Confirms that it's a **1D array**.
+- `.shape` **(5,)** → **5 elements** in a **single row**.
+- `.size` **5** → There are **5 elements in total**.
+
+---
+
+## **4. Creating 2D Arrays (Two-Dimensional)**
+Example code:
+```python
+a = np.array([[1, 4, 7], [1, 18, 25], [9, 7, 4]])  
+print(a)  
+print(a.ndim)   # 2D array  
+print(a.shape)  # Rows and columns  
+print(a.size)   # Total number of elements  
+print(a[2][0])  # Accessing a specific element  
+```
+### **Explanation:**
+- A **2D matrix** is created:
+  ```
+  [[ 1  4  7]
+   [ 1 18 25]
+   [ 9  7  4]]
+  ```
+- `.ndim` **(2)** → Confirms that it's a **2D array**.
+- `.shape` **(3, 3)** → **3 rows and 3 columns**.
+- `.size` **9** → There are **9 total elements**.
+- Accessing `a[2][0]` → **Gets the first element from the third row**.
+
+---
+
+## **5. Generating Arrays using `arange()`**
+Example code:
+```python
+np.arange(1, 10, 2)  # Starts at 1, ends at 10 (exclusive), step 2  
+```
+### **Output:**  
+`[1, 3, 5, 7, 9]`
+
+### **Explanation:**
+- `np.arange(start, stop, step)`
+  - **start =** `1`
+  - **stop =** `10` (exclusive)
+  - **step =** `2` (increments by 2)
+- Generates an array: `[1, 3, 5, 7, 9]`
+
+---
+
+## **6. Reshaping Arrays using `.reshape()`**
+Example code:
+```python
+a = np.arange(1, 10)
+b = a.reshape(3, 3)  # Convert to 3x3 matrix
+print(b)
+```
+### **Output:**
+```
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+```
+
+### **Explanation:**
+- `.reshape(rows, columns)` changes the shape of the array.
+- The 1D array `[1, 2, 3, ..., 9]` is reshaped into a **3x3 matrix**.
+
+---
+
+## **7. Advanced Reshaping using `-1`**
+Example code:
+```python
+a = np.arange(1, 10)
+b = a.reshape(-1, 3)  # Automatically calculates the rows
+print(b)
+```
+### **Output:**
+```
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+```
+### **Explanation:**
+- `-1` automatically calculates the number of rows.
+- The column value `3` is fixed.
+- The function automatically arranges elements.
+
+---
+
+## **8. Indexing and Slicing in NumPy**
+Example code:
+```python
+a = np.array([[10, 20, 30], [40, 50, 60], [70, 80, 90]])
+print(a[1, 2])  # Access element in row index 1, column index 2
+print(a[:, 1])  # Get all elements in column 1
+print(a[0:2, 1:3])  # Extract submatrix
+```
+### **Explanation:**
+- `a[1, 2]` → Accesses **row 1, column 2** → `60`
+- `a[:, 1]` → Extracts **all rows from column 1** → `[20, 50, 80]`
+- `a[0:2, 1:3]` → Extracts a **submatrix** from rows `0 to 1` and columns `1 to 2`:
+  ```
+  [[20 30]
+   [50 60]]
+  ```
+
+---
+
+## **9. Finding Even Numbers in an Array**
+Example code:
+```python
+a = np.array([10, 15, 20, 25, 30])
+even_numbers = a[a % 2 == 0]  # Filters even numbers
+print(even_numbers)
+```
+### **Output:**
+`[10, 20, 30]`
+
+### **Explanation:**
+- The condition `a % 2 == 0` filters even numbers from the array.
+
+---
+
+## **Conclusion**
+This notebook serves as an **introduction to NumPy**, covering:
+✅ Creating **1D & 2D arrays**  
+✅ Using **arange()** to generate sequences  
+✅ **Reshaping arrays** dynamically  
+✅ **Indexing & Slicing** for data selection  
+✅ **Filtering even numbers**  
 
 
+---
+I will summarize the contents of the newly uploaded **Numpy_interview_Q.ipynb** file. Let me process it now.
+
+### **Summary of the File (Numpy_interview_Q.ipynb)**
+
+This Jupyter Notebook appears to contain **NumPy-based coding exercises** commonly asked in **interviews**. Below is a breakdown of its contents:
+
+---
+
+### **1. NumPy Basics (Creating and Inspecting Arrays)**
+- The notebook starts with **importing NumPy**:
+  ```python
+  import numpy as np
+  ```
+- A **2D NumPy array** is created:
+  ```python
+  a = np.array([[1, 4, 9], [3, 7, 2], [10, 18, 25]])
+  ```
+
+---
+
+### **2. Extracting Diagonal Elements**
+- Code extracts **diagonal elements** from the array:
+  ```python
+  f = []
+  c = 0
+  for i in range(a.shape[0]):
+      f.append(a[i][c])
+      c += 1
+  print(f)  # Extracted diagonal elements
+  ```
+- Uses `a.shape[0]` to get **row count**.
+
+---
+
+### **3. Reverse Diagonal Elements**
+- Extracting the **reverse diagonal** from the array:
+  ```python
+  c = 0
+  for i in range(a.shape[0]):
+      c = c - 1
+      f = a[i][c]
+      print(f)
+  ```
+
+---
+
+### **4. Summing All Elements in the Array**
+- Two different implementations to find the **sum of all elements**:
+  ```python
+  e = 0
+  for i in a:
+      c = sum(i)
+      print(c)
+      e += c
+  print(e)  # Total sum of elements
+  ```
+
+---
+
+### **5. Summing Individual Columns**
+- Extracting and summing **each column separately**:
+  ```python
+  f_s = []  # First column sum
+  s_c = []  # Second column sum
+  t_c = []  # Third column sum
+  
+  for i in a:
+      f_s.append(i[0])
+      s_c.append(i[1])
+      t_c.append(i[2])
+
+  print(f"First Column Sum: {sum(f_s)}")
+  print(f"Second Column Sum: {sum(s_c)}")
+  print(f"Third Column Sum: {sum(t_c)}")
+  ```
+
+---
+
+### **6. Summing Even Numbers Only**
+- Extracting **even numbers** and summing them:
+  ```python
+  c = 0
+  for i in a:
+      for j in i:
+          if j % 2 == 0:
+              c += j
+  print(c)  # Sum of even numbers
+  ```
+
+---
+
+### **Conclusion**
+This notebook contains **NumPy-based coding challenges** that are useful for interviews, covering:
+✅ **Array creation & indexing**  
+✅ **Extracting diagonal elements**  
+✅ **Summing elements (total, row-wise, column-wise)**  
+✅ **Filtering and summing even numbers**  
 
 
 
