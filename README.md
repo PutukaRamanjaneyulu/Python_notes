@@ -1716,6 +1716,299 @@ The notebook utilizes various Pandas functions, including:
 
 
 
+---
+The uploaded file is a Jupyter Notebook named **"Matplotlib.ipynb"**. Here's a summary of its contents:
+
+---
+
+### 📘 **Notebook Overview: Matplotlib**
+
+The notebook introduces and demonstrates the basics of **Matplotlib**, a popular data visualization library in Python.
+
+---
+
+### 🔧 **Key Components:**
+
+1. **Importing Libraries:**
+   - `matplotlib.pyplot` is imported as `plt`.
+   - `numpy` is used for numerical operations.
+
+2. **Basic Plotting:**
+   - Line plots using `plt.plot()` with example data.
+   - Adding labels (`xlabel`, `ylabel`) and titles.
+   - Showing plots using `plt.show()`.
+
+3. **Customizations:**
+   - Line styles and colors (`'r--'`, `'g-'`, etc.).
+   - Legends and multiple line plots.
+   - Grid lines using `plt.grid()`.
+
+4. **Subplots:**
+   - Using `plt.subplot()` to create multiple plots in one figure.
+   - Demonstrates layout (e.g., `2 rows x 1 column`, etc.).
+
+5. **Bar Charts:**
+   - `plt.bar()` to create bar graphs.
+   - Customizing bar width and color.
+
+6. **Histograms:**
+   - Using `plt.hist()` to show distribution.
+   - Bins and histogram formatting.
+
+7. **Scatter Plots:**
+   - `plt.scatter()` for plotting points.
+   - Useful for relationship visualization.
+
+8. **Pie Charts:**
+   - `plt.pie()` with labels, percentages, and explosion effect.
+
+---
+
+### 📊 **Learning Focus:**
+The notebook is ideal for beginners looking to:
+- Understand fundamental plotting with Matplotlib.
+- Learn plot customizations and multiple chart types.
+- Gain hands-on experience through clear code examples.
+
+---
+
+Here is a full extraction of **both the information (markdown/text) and code cells** from your `Matplotlib.ipynb` notebook, preserving the sequence and structure as it appears:
+
+---
+
+### 📘 **Cell 1 (Code)**
+
+```python
+import matplotlib.pyplot as plt
+```
+
+---
+
+### 📝 **Cell 2 (Markdown)**  
+**Basic Line Plot**
+
+---
+
+### 📘 **Cell 3 (Code)**
+
+```python
+x = [1, 2, 3]
+y = [5, 7, 4]
+
+plt.plot(x, y)
+plt.show()
+```
+
+---
+
+### 📘 **Cell 4 (Code)**
+
+```python
+x = [1, 2, 3]
+y = [5, 7, 4]
+
+plt.plot(x, y)
+plt.xlabel('x-axis')
+plt.ylabel('y-axis')
+plt.title('My First Graph')
+plt.show()
+```
+
+---
+
+### 📘 **Cell 5 (Code)**
+
+```python
+x = [1, 2, 3]
+y = [5, 7, 4]
+
+plt.plot(x, y, label='Line 1')
+plt.xlabel('x-axis')
+plt.ylabel('y-axis')
+plt.title('Graph with Legend')
+plt.legend()
+plt.show()
+```
+
+---
+
+### 📘 **Cell 6 (Code)**
+
+```python
+x1 = [1, 2, 3]
+y1 = [5, 7, 4]
+x2 = [1, 2, 3]
+y2 = [10, 14, 12]
+
+plt.plot(x1, y1, label='Line 1')
+plt.plot(x2, y2, label='Line 2')
+plt.xlabel('x-axis')
+plt.ylabel('y-axis')
+plt.title('Two Lines on Same Graph')
+plt.legend()
+plt.show()
+```
+
+---
+
+### 📝 **Cell 7 (Markdown)**  
+**Line Style and Color**
+
+---
+
+### 📘 **Cell 8 (Code)**
+
+```python
+x = [1, 2, 3]
+y = [5, 7, 4]
+
+plt.plot(x, y, 'g') # green solid line
+plt.show()
+```
+
+---
+
+### 📘 **Cell 9 (Code)**
+
+```python
+x = [1, 2, 3]
+y = [5, 7, 4]
+
+plt.plot(x, y, 'r--') # red dashed line
+plt.show()
+```
+
+---
+
+### 📝 **Cell 10 (Markdown)**  
+**Grid Lines**
+
+---
+
+### 📘 **Cell 11 (Code)**
+
+```python
+x = [1, 2, 3]
+y = [5, 7, 4]
+
+plt.plot(x, y)
+plt.grid(True)
+plt.show()
+```
+
+---
+
+### 📝 **Cell 12 (Markdown)**  
+**Subplots**
+
+---
+
+### 📘 **Cell 13 (Code)**
+
+```python
+x = [1, 2, 3]
+y = [5, 7, 4]
+
+plt.subplot(1, 2, 1)
+plt.plot(x, y)
+
+x2 = [1, 2, 3]
+y2 = [10, 14, 12]
+
+plt.subplot(1, 2, 2)
+plt.plot(x2, y2)
+
+plt.show()
+```
+
+---
+
+### 📝 **Cell 14 (Markdown)**  
+**Bar Chart**
+
+---
+
+### 📘 **Cell 15 (Code)**
+
+```python
+x = [1, 2, 3, 4, 5]
+y = [7, 8, 5, 6, 4]
+
+plt.bar(x, y)
+plt.show()
+```
+
+---
+
+### 📘 **Cell 16 (Code)**
+
+```python
+x = [1, 2, 3, 4, 5]
+y = [7, 8, 5, 6, 4]
+
+plt.bar(x, y, color='g')
+plt.show()
+```
+
+---
+
+### 📝 **Cell 17 (Markdown)**  
+**Histogram**
+
+---
+
+### 📘 **Cell 18 (Code)**
+
+```python
+from matplotlib import pyplot as plt
+
+population_ages = [22,55,62,45,21,22,34,42,42,4,99,102,110,120,121,122,130,111,115,112,80,75,65,54,44,43,42,48]
+
+bins = [0,10,20,30,40,50,60,70,80,90,100,110,120,130]
+
+plt.hist(population_ages, bins, rwidth=0.8)
+plt.xlabel('age groups')
+plt.ylabel('Number of People')
+plt.title('Histogram')
+plt.show()
+```
+
+---
+
+### 📝 **Cell 19 (Markdown)**  
+**Scatter Plot**
+
+---
+
+### 📘 **Cell 20 (Code)**
+
+```python
+x = [1, 2, 3, 4, 5]
+y = [5, 7, 4, 6, 8]
+
+plt.scatter(x, y)
+plt.show()
+```
+
+---
+
+### 📝 **Cell 21 (Markdown)**  
+**Pie Chart**
+
+---
+
+### 📘 **Cell 22 (Code)**
+
+```python
+slices = [7, 2, 2, 13]
+activities = ['sleeping', 'eating', 'working', 'playing']
+cols = ['c', 'm', 'r', 'b']
+
+plt.pie(slices, labels=activities, colors=cols, startangle=90, shadow=True, explode=(0,0.1,0,0), autopct='%1.1f%%')
+plt.title('Daily Activities')
+plt.show()
+```
+
 
 
 
